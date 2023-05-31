@@ -1,4 +1,76 @@
 
+var digit : number = parseInt(prompt( message: "숫자 입력 :"));
+
+switch (digit) {
+case 0:
+     document.write("Zero");
+     break;
+case 1:
+     document.write("One");
+     break;
+case 2:
+     document.write("Two");
+     break;
+case 3:
+     document.write("Three");
+     break;
+case 4:
+     document.write("Four");
+     break;
+case 5:
+     document.write("Five");
+     break;
+case 6:
+     document.write("Six");
+     break;
+case 7:
+     document.write("Seven");
+     break;
+case 8:
+     document.write("Eight");
+     break;
+case 9:
+     document.write("Nine");
+     break;
+case 10:
+     document.write("Ten");
+     break;}
+
+
+
+var letter : string = prompt( message: "Enter a letter : ");
+letter = letter.toLowerCase();
+if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'v') {console.log('vowel');}else{ console.log('cinsonant')}
+
+
+var num1 : number = parseInt(prompt(message: '첫번쨰 숫자 입력 : '));
+
+
+var num1 : number = 20;
+var num2 : number = 10;
+var num3 : string = "10";
+var num4 : number = 20;
+var num5 : number = 15;
+
+console.log('일반 크기비교')
+console.log(num1 > num2, num1, '>', num2);
+console.log(num1 >= num2, num1, '>=', num2);
+console.log(num1 < num2, num1 '<', num2);
+console.log(num1 <= num2, num1, '<=', num2);
+
+console.log('같은지 여부 확인')
+console.log(num1 == num4, num1,'==', num4);
+console.log(num1 != num4, num1, '!=', num3);
+
+console.log('===')
+console.log(num1 === num3, num1, '===', num3);
+console.log(num2 === num3, num2, '===', num3);
+console.log(num2 == num3, num2, '==', num3);
+
+console.log('num1 > num2 && num1 > num5: ', num1 > num2 && num1 > num5);
+console.log('num1 > num2 || num1 > num5: ', num1 > num2 || num1 > num5);
+
+
 var cels : number = parseFloat(prompt(message:"섭씨 입력: "));
 var farn : number = cels * (9 / 5) + 32;
 
