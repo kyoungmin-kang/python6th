@@ -1,4 +1,23 @@
 
+(function display(message) : void {
+   console.log(message);
+})("hi");
+
+
+var display2 = function displayMessage(msg) : void {
+    console.log(msg);
+}
+
+
+display2(msg: "I am message");
+
+(function addNumbers(a : number ,b : number ) : void{
+    console.log(a + b);
+})(a: 3, b:4);
+
+
+
+
 function message() : void {
      document.write("Hello, I am a function without parameter" + "<br/>");
      }
