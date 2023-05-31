@@ -1,4 +1,10 @@
 
+var cels : number = parseFloat(prompt(message:"섭씨 입력: "));
+var farn : number = cels * (9 / 5) + 32;
+
+document.write("화씨 : " + farn);
+
+
 var base = parseFloat(prompt("밑변 입력 : "));
 var height = parseFloat(prompt("높이 입력 : "))
 
