@@ -1,4 +1,66 @@
 
+var date :date = new Date();
+console.log(date);
+
+var year :number = date.gatFullyear();
+console.log(year);
+
+
+var month :number = date.getMonth();
+console.log(month);
+
+
+var currentDate :number = date.getDate();
+console.log(currentDate);
+
+var currentDay :number = date.getDay();
+console.log(currentDay);
+
+var currentHour :number = date.getHour();
+console.log(currentHour);
+
+var currentMinutes :number = date.getMinutes();
+console.log(currentMinutes);
+
+
+
+
+
+var names : any[] = new Array( arrayLength: 20);
+
+names[0] = "지훈";
+names[1] = "은영";
+
+console.log(names[1]);
+
+
+var students : string[] = ["지훈", "은영", "수진", "준호"];
+
+console.log("students = " + students);
+console.log("2번 인덱스의 학생: ", students[2]);
+
+console.log("학생 배열의 길이: ", students.length);
+
+students.push("경민");
+console.log("push 후 학생 배열 = " + students);
+
+students.pop("경민");
+console.log("pop 후 학생 배열 = " + students);
+
+var numArray1 :number[] = [10, 20];
+var numArray2 :number[] = [30, 40, 50, 60];
+var numArray = num1.concat(num2);
+
+console.log("배열 잇기(concatenation : " + numArray );
+
+console.log(numArray1 + numArray2);
+
+
+
+
+
+
+
 (function display(message) : void {
    console.log(message);
 })("hi");
