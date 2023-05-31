@@ -1,4 +1,19 @@
 
+var i :number = 1
+do {
+    document.write("멋쟁이사자 : " +i++ + "<br/>");
+} while (i <= 10)
+
+document.write("===========<br/>")
+
+var j :num = 1;
+
+while(j < 1) {
+    document.write("멋쟁이사자j : " +j++ + "<br/>");
+    }
+
+
+
 var digit : number = parseInt(prompt( message: "숫자 입력 :"));
 
 switch (digit) {
