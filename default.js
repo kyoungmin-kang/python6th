@@ -1,4 +1,47 @@
 
+function message() : void {
+     document.write("Hello, I am a function without parameter" + "<br/>");
+     }
+
+function welcomeMessage(name) : void {
+    document.write("welcome " + name + "<br/>");
+    }
+
+function addition(num1, num2) : void {
+     var sum = num1 + num2;
+     document.write("addition is " + sum + "<br/>");
+     }
+
+function square(num) {
+         return num * num;
+         }
+
+message();
+welcomeMessage( name: "강경민");
+addition(num1: 2, num2: 3);
+document.write("sqaure of 5 is " + sqaure(num: 5) + "<br/>");
+
+
+for (var i :number = 1; i <= 100; i++) {
+    if(i == 20) {
+       break;
+       }
+     document.write(i + "<br/>");
+}
+
+document.write("===============<br/>");
+
+
+for (var i :number = 1; i <= 100; i++) {
+    if (i == 20){
+        continue;
+    }
+    document.write(k + "<br/>");
+}
+
+
+
+
 var i :number = 1
 do {
     document.write("멋쟁이사자 : " +i++ + "<br/>");
