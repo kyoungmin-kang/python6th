@@ -1,10 +1,9 @@
-# 멤버 in 연산자
+# is 연산자
 
-st1 = "Welcome to 멋쟁이 사자"
-print("to" in st1)
+a = 10
+b = 10
+print(a is not b)
 
-st2 = "Welcome to 멋쟁이 사자"
-print("to" in st2)
-
-st3 = "Welcome to 멋쟁이 사자"
-print("subs" in st3)
+a = 10
+b = '10'
+print(a is not b)
