@@ -1,8 +1,8 @@
 # 명시적 타입 변환
 
-q = 20
-u = '10'
-print(type(u))
-r = q + int(u)
-print(r, type(r))
-r = str(q) + u
+n1 = 10.99
+vn1 = int(n1)
+
+print(vn1, type(vn1))
+
+
