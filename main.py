@@ -1,16 +1,10 @@
-# 할당 연산자 =
-a = 20
-b = 20
-m = 15
+# 멤버 in 연산자
 
-y = a + b
-print(y)
+st1 = "Welcome to 멋쟁이 사자"
+print("to" in st1)
 
-m += 10 # m = m + 10
-print(m)
+st2 = "Welcome to 멋쟁이 사자"
+print("to" in st2)
 
-m **= 2
-print(m)
-
-m //=10
-print(m)
+st3 = "Welcome to 멋쟁이 사자"
+print("subs" in st3)
