@@ -1,17 +1,24 @@
-data = [10, 20, -50, 21.3, 'Like Lion']
-print(data)
+name = input()
 
-print("Like", "Share", "Subcribe", sep='')
-print("Like", "Share", "Subcribe", sep='***')
+print(name)
 
-print("Like", "Share", "Subcribe", sep='***', end='\t') # \t(특수문자)=tap(들여쓰기 같은 띄어쓰기), \n(기본형 특수문자)=줄바꿈
-print("Like", "Share", "Subcribe", sep='***', end='\n')
+name = input("Your Name: ")
+mobile = input("Enter Your Mobile Number:")
+mb = int(mobile)
+print(mb, type(mb))
 
-m = 40
-print("value: ", m)
+price = float(input("Total Price:"))
 
-name = "강경민"
-age = 28
-print("My name is", name, "and My age is", age, sep=' ')
+print(price)
+complex_number = complex(input("Enter Complex Number:"))
+print(complex_number)
+
+print("He said, \"Hello Would\"")
+print('He said, "Hello Would"')
+print('It\'s beautiful day')
+
+
+
+
 
 
