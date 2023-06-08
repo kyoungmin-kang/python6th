@@ -1,39 +1,30 @@
+i = 0
+
+def myfun():
+    i = i + 1
+    print("My Function i:" i)
+
+ myfun()
+
+
+a = 50
+
 def show():
-    x = 10
-    print(x)
+    a = 10
+    print("show-A: ", a)
 
 
     show()
+    print("A:", a)
 
+    def show2():
+        global a
+        print("show2-A:", a)
+        a = 20
+        print("show2-A2: ", a)
 
-    def add(y):
-        x = 10
-        print(x)
-        print(x+y)
-
-
-        add(20)
-
-        a = 50
-
-        def show():
-            x = 10
-            print(x)
-            print(a)
-
-
-
-            print("Goval Valiable a:", a)
-            i = 0
-
-            def myfun():
-                a = i + 1
-                print("My Function", a)
-                myfun()
-                print("Goval Valiable a:", a)
-
-
-
+    show2()
+    print("A: ",a)
 
 
 
