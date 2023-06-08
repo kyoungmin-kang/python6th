@@ -1,7 +1,3 @@
-def val(x):
-    print("Inside :", x, id(x))
-    x += 1
-    print("Inside After:", x, id(x))
 import sys
 print("default:", sys.getrecursionlimit())
 sys.setrecursionlimit(3000)
@@ -13,12 +9,24 @@ def myfun():
     print("My Function:", i)
     myfun()
 
-print("=====")
-x = 10
-print("Before Calling:", x, id(x))
-val(x)
-print("After Calling: ", x, id(x))
 myfun()
+show = lambda x: print(x)
+
+show(5)
+
+add = lambda x, y: (x + y)
+
+print(add(5, 2))
+
+add_sub = lambda x, y: (x + y, x - y)
+a, s = add_sub(5, 2)
+
+print(a)
+print(s)
+
+add = lambda x, y=3: (x + y)
+
+print(add(5))
 
 
 
