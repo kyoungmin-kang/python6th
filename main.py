@@ -1,58 +1,36 @@
-b = (10)
-c = (10,)
+a = {10, 20, 30}
+a = {10, 20, 30, "멋쟁이사자", "Kang", 40}
+a = {10, 20, 30, "멋쟁이사자", "Kang", 40, 10, 20}
+
+
+b = set()
 print(type(b))
-print(type(c))
+a.add(50)
+a.update({10, 20, 60, 70})
+print(a)
+a.remove('멋쟁이사자')
+a.discard('멋쟁이사자')
+a.discard(70)
+print(a)
 
-d = (10, 20, 30, 40)
-e = (10, 20, -50, 21.3, '멋쟁이사자')
-f = 10, 20, -50, 21.3, '멋쟁이사자'
+new_set = a.copy()
+new_set.clear()
+print(new_set)
 
-print(d,e,f, sep="\n")
+intersection_a_new = a.intersection(new_set, a, b)
+print(intersection_a_new)
 
-print(f[1])
-print(f[2])
-print(f[3])
-print(f[4])
-print(f[:3])
-print(f[1:4])
-print(f[3:])
-g = c + f
-print(g)
-print(f * 5)
-print(-10 in f)
-print("=======")
-h = (10, 20, -50, 21)
-print(min(h), max(h))
-print(h.count(20))
-print(h.index(20))
-sorted_a = sorted(h)
-print(sorted_a)
-a = (10, 20, -50)
-x, y, z = a
-print(x,y,z)
+union_a = a.union(new_set)
+print('union_a:', union_a)
 
-a = 1
-b = 2
-print(a, b)
+difference_a = a.difference(new_set)
+print('difference_a:', difference_a)
 
-tmp = a
-a = b
-b = tmp
+print(b.issubset(a))
+print(b.issuperset(b))
 
-print(a, b)
+sym_a = a.symmetric_difference(new_set)
+print('symmetric_difference:', sym_a)
 
-a, b = b, a
 
-print(a, b)
-
-list_h = list(h)
-
-print(list_h), type(list_h)
-
-tuple_h = tuple(list_h)
-
-print(tuple_h, type(tuple_h))
-
-nested_tuple = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
-print(nested_tuple)
 
