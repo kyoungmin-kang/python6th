@@ -1,22 +1,18 @@
-name = input()
+def pw(z, y)
+    z = x ** y
+    print(z)
 
-print(name)
 
-name = input("Your Name: ")
-mobile = input("Enter Your Mobile Number:")
-mb = int(mobile)
-print(mb, type(mb))
 
-price = float(input("Total Price:"))
+    pw(2, 5)
+    pw(5, 2, 3)
 
-print(price)
-complex_number = complex(input("Enter Complex Number:"))
-print(complex_number)
+    def show(name, age)
+        print(f"name: {name} Age: {age}:")
 
-print("He said, \"Hello Would\"")
-print('He said, "Hello Would"')
-print('It\'s beautiful day')
 
+show(name="멋쟁이사자", age=28)
+show(age="28", name="멋쟁이사자")
 
 
 
