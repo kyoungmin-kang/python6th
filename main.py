@@ -1,30 +1,34 @@
-i = 0
 
-def myfun():
-    i = i + 1
-    print("My Function i:" i)
+fruit = ["apple", "banana", "cherry", "orange"]
 
- myfun()
+print(fruit)
 
+fruits.append("grape")
 
-a = 50
+print(fruit)
 
-def show():
-    a = 10
-    print("show-A: ", a)
+fruits.insert(2, "kiwi")
 
+print(fruit)
 
-    show()
-    print("A:", a)
+print(fruits.pop())
+print(fruits.pop(1))
 
-    def show2():
-        global a
-        print("show2-A:", a)
-        a = 20
-        print("show2-A2: ", a)
+print(fruits)
 
-    show2()
-    print("A: ",a)
+fruits.append("cherry")
+print(fruits)
+
+print(fruits.index("cherry"))
+print(fruits.remove("cherry"))
+print(fruits.index("cherry"))
+print(fruits.remove("cherry"))
+print(fruits.index("cherry"))
+
+fruits.reverse()
+
+print(fruits)
+
 
 
 
