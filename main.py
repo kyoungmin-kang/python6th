@@ -1,20 +1,21 @@
-class Vector:
+import os
 
-    def __init__(self,x, y):
-        self.x = x
-        self.y = y
+filename = 'example.txt'
 
-
-    def __add__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
-
-    def __str__(self):
-        return f'Vector({self.x}, {self.y})'
+print("파일이 존재하는지 확인하기")
+if os.path.isfile(filename):
+    print(f"{filename}이 존재합니다.")
+else:
+    print(f"{filename}이 없습니다.")
 
 
-a = Vector(1, 2)
-b = Vector(3, 4)
-print(a)
-print(b)
-c = a + b
-print(c)
+file_object = open('list_example.txt', 'w')
+
+content_list = ["Python", "Java", "c++", "Javascript"]
+
+for item in content_list:
+    print(file_object.tell())
+    file_object.write(item + '\n')
+
+file_object.close()
+
