@@ -1,21 +1,4 @@
-import os
+from MyApp.Handlers.text_handler import handle_text
 
-filename = 'example.txt'
-
-print("파일이 존재하는지 확인하기")
-if os.path.isfile(filename):
-    print(f"{filename}이 존재합니다.")
-else:
-    print(f"{filename}이 없습니다.")
-
-
-file_object = open('list_example.txt', 'w')
-
-content_list = ["Python", "Java", "c++", "Javascript"]
-
-for item in content_list:
-    print(file_object.tell())
-    file_object.write(item + '\n')
-
-file_object.close()
-
+input_text = "python package practice"
+handle_text(input_text)
