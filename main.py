@@ -6,3 +6,4 @@ try:
     raise CustomException("This is a custom exception")
 except CustomException as e:
     print(f"Error: {e.message}")
+
