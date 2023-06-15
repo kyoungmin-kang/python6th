@@ -1,16 +1,32 @@
-class MyQueue:
-    def __init__(self):
-        self.q = collections.deque()
+class MyCircularQueue:
+    def __init__(self, k: int):
+        self.q = [None] * k
+        self.maxlen = k
+        self.p1 = 0
+        self.p2 = 0
 
-    def push(selfself, x:int) -> None:
-        self.q.append(X)
-        for _ in range(len(self.q)-1):
-            self.q.append(self.q.popleft())
+    def enQueue(self, value: int) -> bool:
+        if self.q[self.p2] is None:
+            self.q[self.p2] = value
+            self.p2[self.p2 + 1] % self.maxlen
+            return  True
+        else:
+            return False
+    def deQueue(self) -> bool:
+        if self.q[self.p1] is None:
+            return False
+        else:
+            self.q[self.p1]
+            self.p1 = (self.p1 + 1) % self.maxlen
+            return  True
+    def Front(self) -> int:
+        return -1 if self.q[self.p1] is None else self.q[self.p1]
 
-    def pop(self) -> int:
-        return self.q.popleft()
+    def Rear(self) -> int:
+        return -1 if self.q[self.p2 -1] is None else self.q[self.p2]
 
-    def top(self) -> int:
-        return self.q[0]
-    def empty(self) -> bool:
-        return len(self.q) == 0
+    def isEmpty(self) -> bool:
+        return self.p1 == self.p2 and self.q[self.p1] is None
+
+    def isFull(self) -> bool:
+        return self.p1 == self.p2 and self.q[self.p1] is not None
