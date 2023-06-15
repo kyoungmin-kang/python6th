@@ -1,19 +1,16 @@
 class MyQueue:
     def __init__(self):
-       self.input = []
-       self.output = []
+        self.q = collections.deque()
+
     def push(selfself, x:int) -> None:
-        self.input.append(x)
+        self.q.append(X)
+        for _ in range(len(self.q)-1):
+            self.q.append(self.q.popleft())
 
     def pop(self) -> int:
-        self.peek()
-        return self.output.pop()
+        return self.q.popleft()
 
-    def peek(self) -> int:
-        if not self.output:
-            while self.input:
-                self.output.append(self.input.pop())
-        return self.output[-1]
-
+    def top(self) -> int:
+        return self.q[0]
     def empty(self) -> bool:
-        return self.input == [] and self.output == []
+        return len(self.q) == 0
