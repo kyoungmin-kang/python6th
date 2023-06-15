@@ -1,39 +1,12 @@
 class Solution:
-    def removeDuplicateLetters(self, s: str) -> str:
-        # if not  s:
-        #     return ""
-        #
-        # for char in sorted(set(s)):
-        #     suffix = s[s.index(char):]
-        #     if set(s) == set(suffix):
-        #         return  char + self.removeDuplicateLetters(suffix.replace(char, ""))
-        # return ""
-        # if not s:
-        #     return ""
-        # #문자열의 문자 빈도수 계산
-        # counter = {char: 0 for char in set(s)}
-        #
-        # for char in s:
-        #     counter[char] += 1
-        #
-        # #사전순으로 가장 작은 문자의 인뎃스 찾기
-        # min_idx = 0
-        # for i, char in enumerate(s):
-        #     if char < s[min_idx]:
-        #         min_idx = i
-        #     counter[char] -= 1
-        #     if counter[char] == 0:
-        #         break
-        # return s[min_idx] + self.removeDuplicateLetters(s[min_idx + 1:].replace(s[min_idx], ""))
-        last_occurrence = {c: i for i, c in enumerate(S)}
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        answer = [0] * len(temperatures)
         stack = []
-        in_stack = set()
 
-        for i, c in enumerate(s):
-            if c not in in_stack:
-                while stack and c < stack[-1] and i < last_occurrence[stack[-1]]:
-                    in_stack.remove(stack.pop())
-                stack.append(c)
-                in_stack.add(c)
+        for i, cur in enumerate(temperatures):
+            while stack and cur > temperatures[stack[-1]]:
+                last = stack.pop()
+                answer[last] = i - last
+            stack.append(i)
 
-        return ''.join(stack)
+        return answer
