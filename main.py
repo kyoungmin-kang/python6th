@@ -1,12 +1,19 @@
-class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        answer = [0] * len(temperatures)
-        stack = []
+class MyQueue:
+    def __init__(self):
+       self.input = []
+       self.output = []
+    def push(selfself, x:int) -> None:
+        self.input.append(x)
 
-        for i, cur in enumerate(temperatures):
-            while stack and cur > temperatures[stack[-1]]:
-                last = stack.pop()
-                answer[last] = i - last
-            stack.append(i)
+    def pop(self) -> int:
+        self.peek()
+        return self.output.pop()
 
-        return answer
+    def peek(self) -> int:
+        if not self.output:
+            while self.input:
+                self.output.append(self.input.pop())
+        return self.output[-1]
+
+    def empty(self) -> bool:
+        return self.input == [] and self.output == []
