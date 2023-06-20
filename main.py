@@ -5,11 +5,11 @@ class Solution:
             graph[a].append(b)
 
         route = []
+        stack = ['JFK']
 
-        def visit(city):
-            while graph[city]:
-                next_city = graph[city],pop(0)
-                visit(next_city)
+        while stack:
+            while graph[stack[-1]]:
+                stack.append(graph[stack[-1]].pop(0))
+            route.append(stack.pop())
 
-        visit("JFK")
         return route[::-1]
