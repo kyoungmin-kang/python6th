@@ -1,15 +1,25 @@
+import collections
+import heapq
+
+
 class Solution:
-    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        graph = defaultdict(list)
-        for a, b in sorted(tickets):
-            graph[a].append(b)
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        graph = collections.defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((v, w))
 
-        route = []
-        stack = ['JFK']
+        Q = [{0,k}]
+        dist = collections.defaultdict(int)
 
-        while stack:
-            while graph[stack[-1]]:
-                stack.append(graph[stack[-1]].pop(0))
-            route.append(stack.pop())
+        while Q:
+            time, node = heapq.heappop(Q)
+            if node not in dist:
+                dist[node] = time
+                for v, w in graph[node]:
+                    alt = time + w
+                    heapq.heappush(Q, (alt, v))
 
-        return route[::-1]
+        if len(dist) == n:
+            return  max(dist.values())
+
+        return -1
