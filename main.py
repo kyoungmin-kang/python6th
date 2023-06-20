@@ -1,14 +1,15 @@
 class Solution:
-    def permute(self, num: List[int]) -> List[List[int]]:
-        def dfs(path):
-            if len(path) == len(nums):
-                result.append(path[:])
-                return
-            for i in range(len(nums)):
-                if nums[i] in path:
-                    continue
-                dfs(path + [nums[i]])
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = defaultdict(list)
+        for a, b in sorted(tickets):
+            graph[a].append(b)
 
-        result = []
-        dfs([])
-        return result
+        route = []
+
+        def visit(city):
+            while graph[city]:
+                next_city = graph[city],pop(0)
+                visit(next_city)
+
+        visit("JFK")
+        return route[::-1]
