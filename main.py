@@ -5,22 +5,29 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if root is None:
-            return 0
-        queue = collections.deque([root])
-        depth = 0
+    def longestUnivaluePath(self, root: Optional[TreeNode]) -> int:
+        self.longest_path = 0
 
-        while queue:
-            depth += 1
-            for _ in range(len(queue)):
-                current_root = queue.popleft()
-                if current_root.left:
-                    queue.append(current_root.left)
-                if current_root.right:
-                    queue.append(current_root.right)
-        return depth
+        def dfs(node):
+            if not node:
+                return 0
 
+            left_length = dfs(node.left)
+            right_length = dfs(node_right)
+
+            left_arrow = right_arrow = 0
+
+            if node.left and node.left.val == node.val:
+                left_arrow = left_length + 1
+            if node.right and node.right.val == node.val:
+                right_arrow = right_length + 1
+
+            self.longest_path = max(self.longest_path, left_arrow + right_arrow)
+
+            return max(left_arrow, right_arrow)
+
+        dfs(root)
+        return self.longest_path
 
 
 
