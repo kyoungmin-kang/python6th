@@ -5,30 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def longestUnivaluePath(self, root: Optional[TreeNode]) -> int:
-        self.longest_path = 0
-
-        def dfs(node):
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def check_height(node):
             if not node:
                 return 0
+            left_height = check_height(node.left)
+            right_height = check_height(node.right)
 
-            left_length = dfs(node.left)
-            right_length = dfs(node_right)
+            if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
+                return -1
 
-            left_arrow = right_arrow = 0
+            return max(left_height, right_height) + 1
 
-            if node.left and node.left.val == node.val:
-                left_arrow = left_length + 1
-            if node.right and node.right.val == node.val:
-                right_arrow = right_length + 1
-
-            self.longest_path = max(self.longest_path, left_arrow + right_arrow)
-
-            return max(left_arrow, right_arrow)
-
-        dfs(root)
-        return self.longest_path
-
-
-
-
+        return check_height(root) != -1
