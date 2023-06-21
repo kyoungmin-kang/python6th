@@ -1,20 +1,31 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+import collections
+
+
 class Solution:
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        def check_height(node):
-            if not node:
-                return 0
-            left_height = check_height(node.left)
-            right_height = check_height(node.right)
+    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+        if n <= 1:
+            return [0]
 
-            if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
-                return -1
+        graph = collections.defaultdict(list)
+        for i, j in edges:
+            graph[i].append(j)
+            graph[j].append(i)
 
-            return max(left_height, right_height) + 1
+        leaves = []
+        for i in range(n + 1):
+            if len(graph[i]) == 1:
+                leaves.append(i)
 
-        return check_height(root) != -1
+        while n > 2:
+            n -= len(leaves)
+            new_leaves = []
+
+            for leaf in leaves:
+                neighbor = graph[leaf].pop()
+                graph[neighbor].remove(leaf)
+
+                if len(graph[neighbor]) == 1:
+                    new_leaves.append(neighbor)
+            leaves = new_leaves
+
+        return leaves
